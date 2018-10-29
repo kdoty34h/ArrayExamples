@@ -226,6 +226,7 @@ class Main
          * numbers from ar1 into ar4.  Print ar4
          */
         // Find out how big ar4 should be
+        System.out.println("**TASK 9**");
          int l4=0;
          for (int i=0 ; i<ar2.length ; i++)
          {
@@ -248,7 +249,9 @@ class Main
            for (int i=0 ; i<k ; i++)
                System.out.println(ar4[i]);
         
-        
+        /* 
+         * Unknown Test Round
+         */
         System.out.println("**TASK UNKNOWN**");
         int l = 0;
         int[] aru = new int[ar2.length];
@@ -264,36 +267,119 @@ class Main
          * old   ar4: 1 3 5 7 9
          * new   ar4  9 1 3 5 7
          */
+         System.out.println("** Task 10 ** ");
+         System.out.println("Original ar4");
+         for (int i=0 ; i<ar4.length ; i++)
+             System.out.println(ar4[i]);
+        
+         int temp10=ar4[ar4.length-1];
+         
+         for (int i=ar4.length-1 ; i>0 ; i--)
+            ar4[i]=ar4[i-1];
+         
+         ar4[0]=temp10;
+            
+         System.out.println("New ar4");
+         for (int i=0 ; i<ar4.length ; i++)
+             System.out.println(ar4[i]);
         
         
-        /*
+         /*
          * Task 11.  Reverse the order of elements in ar2
          */
+        System.out.println("** Task 11 **");
+        for (int i=0 ; i<ar2.length ; i++)
+            System.out.println("ar2["+i+"] = "+ar2[i]);
+            
+      
+       
+        int[] b=new int[ar2.length];
+       for (int i=0 ; i<ar2.length ; i++)
+       {
+           b[ar2.length-1-i]=ar2[i];
+        }
+        for (int i=0 ; i<ar2.length ; i++)
+        {
+            ar2[i]=b[i];
+        }
+        
+        for (int i=0 ; i<ar2.length ; i++)
+            System.out.println("ar2["+i+"] = "+ar2[i]);
+        
         
         
         /*
-         * Task 12: 
-         * Create an array of Strings called ar5.
-         * 
-         * Each element is a word of the following phrase
-         * 
-         * 
-         * Four score and seven years ago our fathers brought forth on
-         * this continent a new nation
-         *
-         *. ar5[0] = "Four"
-         *  ar5[1] = "score"
-         *  
-         *  Create another array of ints called ar6.  Write a for loop that
-         *  will iterate through each element in ar5 and the length of the
-         *  word is the element in ar6.
-         *  
-         *  ar5[0]= "Four"   ar6[0]=4
-         *  ar5[1]="score"   ar6[1]=5
-         *  ar5[2]="and"     ar6[2]=3
-         *  
-         *  Count how many words have more than 5 letters.
-         */
+ * Task 12: 
+ * Create an array of Strings called ar5.
+ * 
+ * Each element is a word of the following phrase
+ * 
+ * 
+ * Four score and seven years ago our fathers brought forth on
+ * this continent a new nation
+ *
+ *. ar5[0] = "Four"
+ * ar5[1] = "score"
+ * 
+ * Create another array of ints called ar6. Write a for loop that
+ * will iterate through each element in ar5 and the length of the
+ * word is the element in ar6.
+ * 
+ * ar5[0]= "Four" ar6[0]=4
+ * ar5[1]="score" ar6[1]=5
+ * ar5[2]="and" ar6[2]=3
+ * 
+ * Count how many words have more than 5 letters.
+ */
+ String[] ar5=new String[16];
+ ar5[0]="Four";
+ ar5[1]="score";
+ ar5[2]="and";
+ ar5[3]="seven";
+ ar5[4]="years";
+ ar5[5]="ago";
+ ar5[6]="our";
+ ar5[7]="fathers";
+ ar5[8]="brought";
+ ar5[9]="forth";
+ ar5[10]="on";
+ ar5[11]="this";
+ ar5[12]="continent";
+ ar5[13]="a";
+ ar5[14]="new";
+ ar5[15]="nation";
+int count5=0;
+ 
+ for (int i=0 ; i<ar5.length ; i++)
+ {
+ // ar5[i] is a String object
+ // ar5[2] is "and"
+ // ar5[2].length() is 3.
+ 
+     if (ar5[i].length()>5)
+         count5++;
+ }
+ 
+ System.out.println(" TASK 12: is " + count5);
+ /*
+ * Boss Level Task 12. Create an array with just words
+ * of length greater than 5
+ */
+ k=0; // previously defined
+ String[] task12Greater= new String[count5];
+ for (int i=0 ; i<ar5.length ; i++)
+ {
+     if (ar5[i].length() >5)
+     {
+         task12Greater[k]=ar5[i];
+         k++;
+     }
+ }
+ 
+ for (int i=0 ; i<task12Greater.length ; i++)
+ {
+     System.out.println(" 12 BOSS["+i+"] :"+task12Greater[i]);
+ }
         
         /*
          * Task 13
